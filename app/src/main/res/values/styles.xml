@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DetailsTitle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontSizeName</item>
+        <!--<item name="android:layout_marginStart">@dimen/padding</item>-->
+    </style>
+
+    <style name="DetailsRatingBar" parent="android:style/Widget.Material.RatingBar.Small">
+        <item name="android:layout_marginStart">@dimen/padding</item>
+
+
+    </style>
+
+    <style name="DetailPrice" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/fontSizePrice</item>
+        <item name="android:color">@color/black</item>
+    </style>
+
+
+</resources>

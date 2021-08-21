@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="thumb_size">100dp</dimen>
-    <dimen name="fontPrice">8pt</dimen>
     <dimen name="lineItemName">9pt</dimen>
     <dimen name="lineItemMargin">8dp</dimen>
+    <dimen name="fontSizeName">10pt</dimen>
+    <dimen name="fontSizePrice">8pt</dimen>
     <dimen name="padding">20dp</dimen>
+    <dimen name="thumb_size">100dp</dimen>
 </resources>

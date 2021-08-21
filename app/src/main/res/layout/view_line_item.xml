@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="product"
+            type="com.example.acmeonlinestore.model.Product" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -54,19 +60,12 @@
             android:layout_height="wrap_content"
             android:text='@{product.getPriceStr()}'
             android:textColor="@color/red"
-            android:textSize="@dimen/fontPrice"
+            android:textSize="@dimen/fontSizePrice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageViewThumb"
             app:layout_constraintTop_toBottomOf="@id/description"
             tools:text="$399.99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <data>
-
-        <variable
-            name="product"
-            type="com.example.acmeonlinestore.model.Product" />
-    </data>
 
 </layout>

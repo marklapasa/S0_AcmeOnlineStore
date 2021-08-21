@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.BindingAdapter
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.acmeonlinestore.BR
 import com.example.acmeonlinestore.R
+import com.example.acmeonlinestore.databinding.ViewProductDetailsBinding
 import com.example.acmeonlinestore.model.Product
 import com.example.acmeonlinestore.ui.RecyclerViewAdapter
 import kotlinx.coroutines.flow.collect
@@ -88,8 +90,23 @@ class MainFragment() : Fragment() {
         }
     }
 
+    /**
+     * Create a quick Alert showing the details of the product
+     */
     private fun showDetails(product: Product) {
-        product
+
+        val binding = DataBindingUtil.inflate<ViewProductDetailsBinding>(layoutInflater, R.layout.view_product_details, null, false)
+        binding.product = product
+
+        val dialog = AlertDialog.Builder(context).apply {
+            setView(binding.root)
+        }.create()
+
+        binding.btnClose.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

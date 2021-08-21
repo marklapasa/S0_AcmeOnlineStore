@@ -17,4 +17,8 @@ data class Product(
     fun getPriceStr(): String? {
         return NumberFormat.getCurrencyInstance().format(price)
     }
+
+    fun getRatingFloat() : Float? {
+        return rating?.toFloat()
+    }
 }
