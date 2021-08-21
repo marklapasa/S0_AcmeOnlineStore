@@ -5,6 +5,17 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/esri/S0_AcmeOnlineStore/app/src/main/res/drawable/divider.xml" value="0.30572916666666666" />
+        <entry key="..\:/esri/S0_AcmeOnlineStore/app/src/main/res/layout/main_fragment.xml" value="0.33" />
+        <entry key="..\:/esri/S0_AcmeOnlineStore/app/src/main/res/layout/view_line_item.xml" value="0.4318181818181818" />
+        <entry key="..\:/esri/S0_AcmeOnlineStore/app/src/main/res/menu/options.xml" value="0.28958333333333336" />
+        <entry key="..\:/esri/S0_AcmeOnlineStore/app/src/main/res/menu/sort.xml" value="0.5119791666666667" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

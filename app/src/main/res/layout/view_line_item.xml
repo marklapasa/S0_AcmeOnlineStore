@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Thumb -->
+        <ImageView
+            android:id="@+id/imageViewThumb"
+            android:layout_width="@dimen/thumb_size"
+            android:layout_height="@dimen/thumb_size"
+            android:src='@{product.thumbnail}'
+            android:layout_marginStart="@dimen/padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic"
+            app:thumb='@{product.thumbnail}'/>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/lineItemMargin"
+            android:text='@{product.name}'
+            android:textSize="@dimen/lineItemName"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewThumb"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Apple IIe" />
+
+        <!-- Short Description-->
+        <TextView
+            android:layout_marginStart="@dimen/lineItemMargin"
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text='@{product.description}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewThumb"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Apple IIe Apple IIe Apple IIe" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/lineItemMargin"
+            android:layout_height="wrap_content"
+            android:text='@{product.getPriceStr()}'
+            android:textColor="@color/red"
+            android:textSize="@dimen/fontPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewThumb"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:text="$399.99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.example.acmeonlinestore.model.Product" />
+    </data>
+
+</layout>

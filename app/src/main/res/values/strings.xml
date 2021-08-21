@@ -1,3 +1,7 @@
 <resources>
-  <string name="app_name">Acme Online Store</string>
+  <string name="app_name">Online Store</string>
+  <string name="hint_search">Enter product name or description</string>
+  <string name="sort">Sort</string>
+  <string name="by_name">By Name</string>
+  <string name="by_price">By Price</string>
 </resources>

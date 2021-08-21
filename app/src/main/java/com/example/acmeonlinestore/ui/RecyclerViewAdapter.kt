@@ -20,7 +20,8 @@ abstract class RecyclerViewItem(val coroutineScope: CoroutineScope, val context:
 
 class ItemViewHolder<T>(
   private val binding: ViewDataBinding,
-  private val lifecycleOwner: LifecycleOwner
+  private val lifecycleOwner: LifecycleOwner,
+  private val onItemClicked: (Int) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
   fun bind(item: T, dataBindingID: Int) {
     if (!binding.setVariable(dataBindingID, item)) {
@@ -28,19 +29,26 @@ class ItemViewHolder<T>(
     }
     binding.lifecycleOwner = lifecycleOwner
     binding.executePendingBindings()
+
+    itemView.setOnClickListener {
+      onItemClicked(bindingAdapterPosition)
+    }
   }
 }
 
 abstract class RecyclerViewAdapter<T>(
   private val lifecycleOwner: LifecycleOwner,
   private val dataBindingID: Int,
-  diffCallback: DiffUtil.ItemCallback<T> = RecyclerViewItemDiffCallback()
+  diffCallback: DiffUtil.ItemCallback<T> = RecyclerViewItemDiffCallback(),
+  private val onItemClicked: (T) -> Unit
 ) : ListAdapter<T, ItemViewHolder<T>>(diffCallback) {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder<T> {
     val layoutInflater = LayoutInflater.from(parent.context)
     val binding = DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, viewType, parent, false)
-    return ItemViewHolder(binding, lifecycleOwner)
+    return ItemViewHolder(binding, lifecycleOwner) {
+      onItemClicked(currentList[it])
+    }
   }
 
   override fun onBindViewHolder(holder: ItemViewHolder<T>, position: Int) {
